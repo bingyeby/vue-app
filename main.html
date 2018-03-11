@@ -1,0 +1,86 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+
+<body>
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<script src="/lib/swiper.min.js"></script>
+
+<!--
+    http://blog.csdn.net/a1104258464/article/details/51984721
+    Webpack + vue-loader构建单文件vue组件
+-->
+
+<div id="app">
+    <App></App>
+</div>
+<div id="testComponent">
+    <my-component></my-component>
+</div>
+
+
+
+
+
+
+<div id="main">
+    <div id="view">
+        <!-- 路由出口 -->
+        <!-- 路由匹配到的组件将渲染在这里 -->
+        <router-view></router-view>
+    </div>
+    <div id="router">
+        <!-- 使用 router-link 组件来导航. -->
+        <!-- 通过传入 `to` 属性指定链接. -->
+        <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
+        <router-link to="/basic">基础练习</router-link>
+        <!--用户-->
+        <router-link :to="{ name:'user',params:{userId:123}}">User</router-link>
+        <!-- 注意其中 to :to 区别;[ 接收字符串 接收对象  ]-->
+        <router-link to="/transition-all">渐变1</router-link>
+        <router-link to="/transition-router">渐变2</router-link>
+        <!--<router-link :to="{ name:'transition'}">transition</router-link>-->
+        <router-link to="/welcome">欢迎</router-link>
+
+        <router-link to="/bs">better-scroll</router-link>
+        <router-link to="/login">login页面</router-link>
+
+    </div>
+</div>
+
+
+<script src="/dist/main.js"></script>
+</body>
+
+
+<style>
+    td {
+        border: 1px solid red;
+    }
+    table {
+        border-collapse: collapse;
+    }
+    body > div {
+        outline: 1px solid lightcoral;
+    }
+    #router {
+        position: fixed;
+        bottom: 0;
+        font-size: 18px;
+    }
+    #router > a {
+
+    }
+    .router-link-active {
+        border: 1px solid red;
+        font-weight: bold;
+    }
+</style>
+
+
+</html>
